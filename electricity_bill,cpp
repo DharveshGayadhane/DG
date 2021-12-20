@@ -1,4 +1,5 @@
 #include<iostream>
+#include<stdio.h>
 using namespace std;
 int main()
 {
@@ -14,26 +15,31 @@ cin>>t_c;
 cout<<"Percentage Charge:"<<endl;
 cin>>p_c;
 
-elif(u<100)
+if(u<100)
 {
 bill=u*5;
 }
-elif(u>=100 && u < 150)
+else{
+if(u>=100 && u < 150)
 {
 bill=500+(u-100)*7.5;
 }
-elif(u>=150 && u<200)
+else 
+{
+if(u>=150 && u<200)
 {
 bill=900+(u-150)*9.5;
 }
 else{
 bill=1375+(u-200)*11;
 }
+}   
+}
 bill=bill+b_c+t_c+(u*p_c);
 cout<<"Bill is"<<bill<<endl;
 }
 else{
-cout>>"Enter Valid Units"<<endl;
+cout<<"Enter Valid Units"<<endl;
 }
 return 0;
 }
